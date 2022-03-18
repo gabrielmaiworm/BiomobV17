@@ -1,0 +1,9 @@
+export enum StatusSolicitacao {
+  ATENDIDO = 'ATENDIDO',
+
+  ENCAMINHADO = 'ENCAMINHADO',
+
+  REPETIDO = 'REPETIDO',
+
+  CANCELADO = 'CANCELADO',
+}

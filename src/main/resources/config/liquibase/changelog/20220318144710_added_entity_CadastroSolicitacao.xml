@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CadastroSolicitacao.
+    -->
+    <changeSet id="20220318144710-1" author="jhipster">
+        <createTable tableName="cadastro_solicitacao">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome_solicitante" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cpf_solicitante" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_solicitacao" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="endereco" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ponto_referencia" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="situacao_solicitante" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="quantidade_pessoas" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="retira_doacao" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="perdeu_moradia" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="perdeu_emprego" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="idoso_deficiente" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="filhos_pequenos" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="observacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_aprovacao" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="ativa" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="fator_prioridade" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="status_solicitacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nome_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="descricao_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20220318144710-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/cadastro_solicitacao.csv"
+                  separator=";"
+                  tableName="cadastro_solicitacao"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="nome_solicitante" type="string"/>
+            <column name="cpf_solicitante" type="string"/>
+            <column name="data_solicitacao" type="date"/>
+            <column name="endereco" type="string"/>
+            <column name="ponto_referencia" type="string"/>
+            <column name="situacao_solicitante" type="string"/>
+            <column name="quantidade_pessoas" type="numeric"/>
+            <column name="retira_doacao" type="boolean"/>
+            <column name="perdeu_moradia" type="boolean"/>
+            <column name="perdeu_emprego" type="boolean"/>
+            <column name="idoso_deficiente" type="boolean"/>
+            <column name="filhos_pequenos" type="boolean"/>
+            <column name="observacao" type="string"/>
+            <column name="data_aprovacao" type="date"/>
+            <column name="ativa" type="boolean"/>
+            <column name="fator_prioridade" type="numeric"/>
+            <column name="status_solicitacao" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

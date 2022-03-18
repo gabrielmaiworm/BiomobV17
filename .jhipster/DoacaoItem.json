@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220318144706",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "doacao_item",
+  "fields": [
+    {
+      "fieldName": "imagem",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "quantidade",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "observacao",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DoacaoItem",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "item",
+      "otherEntityRelationshipName": "doacaoItem",
+      "relationshipName": "descricao",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "acao",
+      "otherEntityRelationshipName": "doacaoItem",
+      "ownerSide": false,
+      "relationshipName": "acao",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}
