@@ -1,0 +1,98 @@
+{
+  "applications": "*",
+  "changelogDate": "20220318144710",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cadastro_solicitacao",
+  "fields": [
+    {
+      "fieldName": "nomeSolicitante",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cpfSolicitante",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataSolicitacao",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endereco",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pontoReferencia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "situacaoSolicitante",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantidadePessoas",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "retiraDoacao",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "perdeuMoradia",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "perdeuEmprego",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "idosoDeficiente",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "filhosPequenos",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "observacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataAprovacao",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "ativa",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "fatorPrioridade",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "statusSolicitacao",
+      "fieldType": "StatusSolicitacao",
+      "fieldValues": "ATENDIDO,ENCAMINHADO,REPETIDO,CANCELADO"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CadastroSolicitacao",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cadastroUser",
+      "otherEntityRelationshipName": "cadastroSolicitacao",
+      "relationshipName": "nome",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "solicitacaoItem",
+      "otherEntityRelationshipName": "cadastroSolicitacao",
+      "relationshipName": "descricao",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
